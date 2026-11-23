@@ -1,0 +1,25 @@
+# Variables de entorno (contiene credenciales sensibles)
+.env
+storageState.json
+
+# Dependencias
+node_modules/
+node-v26.13.0-win-x64/
+
+# Resultados de Playwright
+test-results/
+playwright-report/
+
+# Build de TypeScript
+dist/
+.bat/
+install.bat/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos temporales
+*.local
+*.bat
+inspect.js
