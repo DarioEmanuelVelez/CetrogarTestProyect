@@ -20,7 +20,9 @@ test('TC04 - Iniciar sesion, buscar un producto y agregarlo al carrito', async (
  
 
   await homePage.search(PRODUCT.NAME);
+  await expect(searchResults.validacionTitulo(PRODUCT.NAME)).toBeVisible();
 
   await searchResults.addFirstProductToCart();
-  await cartPage.goto();
+  
+  await expect(cartPage.productoEnCarrito).toBeVisible();
 });

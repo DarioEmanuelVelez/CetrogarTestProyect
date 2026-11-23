@@ -10,10 +10,11 @@ export class SearchResultsPage {
     this.page = page;
   }
 
-  /** Espera a que carguen los resultados y devuelve true si hay al menos uno */
-  async hasResults(): Promise<boolean> {
-    const results = this.page.getByRole('listitem').or(this.page.locator('article'));
-    return (await results.count()) > 0;
+  /** Título que muestra la página al buscar un producto */
+  validacionTitulo(producto: string): Locator {
+    return this.page.getByText(`Resultados de búsqueda para: ${producto}`, {
+      exact: true,
+    });
   }
 
   /** Verifica que el producto buscado aparezca en los resultados */

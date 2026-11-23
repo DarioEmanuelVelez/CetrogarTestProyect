@@ -17,4 +17,7 @@ test('TC03 - Iniciar sesion y filtrar por buscador un producto', async ({ page }
 
   await homePage.search(PRODUCT.NAME);
 
-});
+  await expect(searchResults.validacionTitulo(PRODUCT.NAME)).toBeVisible();
+
+  });
+  
